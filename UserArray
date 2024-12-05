@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection.Metadata.Ecma335;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace upr
+{
+    internal class UserArray
+    {
+        internal static int[] inputArr(int[] input)
+        {
+            Random number = new Random();
+            for (int i = 0; i < input.Length; i++)
+            {
+                input[i] = number.Next(2, 7);
+            }
+            return input;
+        }
+
+        internal static int searchArr(int[] input)
+        {
+            Console.WriteLine("What number are we searching?");
+            int searchNumber = int.Parse(Console.ReadLine());
+            int count = 0;
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (input[i] == searchNumber)
+                {
+                    count++;
+                }
+            }
+            Console.WriteLine($"{count} times");
+            return count;
+        }
+
+        internal static int[] outputArr(int[] output)
+        {
+            for (int i = 0; i < output.Length;i++)
+            {
+                Console.Write(output[i]+ " ");
+            }
+            return output;
+        }
+
+}
+}
