@@ -11,7 +11,10 @@ namespace upr
             Array.Reverse(a);
             Array.Resize(ref a, 7);
             UserArray.outputArr(a);
-            
+            double[,] b = new double[7, 10];
+            MultiArray.inputArr(b);
+            MultiArray.searchArr(b);
+            MultiArray.printArr(b);
         }
     }
 }
