@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace upr
+{
+    internal class MultiArray
+    {
+        internal static double[,] inputArr(double[,] input)
+        {
+            Random number = new Random();
+            for (int i = 0; i < input.GetLength(0); i++)
+            {
+                for (int j = 0; j < input.GetLength(1); j++)
+                {
+                    input[i, j] = Math.Round(number.NextDouble(), 2);
+                }
+            }
+            return input;
+        }
+
+        internal static int searchArr(double[,] input)
+        {
+            Console.WriteLine("What number are we searching?");
+            double searchNumber = double.Parse(Console.ReadLine());
+            int count = 0;
+            for (int i = 0; i < input.GetLength(0); i++)
+            {
+                for (int j = 0; j < input.GetLength(1); j++)
+                {
+                    if (searchNumber == input[i, j])
+                    {
+                        count++;
+                    }
+                }
+            }
+            Console.WriteLine($"{count} times");
+            return count;
+        }
+
+        internal static double[,] printArr(double[,] output)
+        {
+            for(int i = 0; i < output.GetLength(0); i++)
+            {
+                for (int j = 0; j < output.GetLength(1); j++)
+                {
+                    Console.Write(output[i, j] + " ");
+                }    
+            }
+            return output;
+        }
+
+    }
+}
