@@ -1,0 +1,17 @@
+namespace upr
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] a = new int[10];
+            UserArray.inputArr(a);
+            UserArray.searchArr(a);
+            UserArray.outputArr(a);
+            Array.Reverse(a);
+            Array.Resize(ref a, 7);
+            UserArray.outputArr(a);
+            
+        }
+    }
+}
